@@ -37,6 +37,10 @@ async def health_check():
     logger.info("Health check")
     return {"status": "ok"}
 
+@app.get(f"/{service_name}/praise")
+async def praise():
+    return {"message": "You're doing great!"}
+
 @app.post(f"/{service_name}/predict")
 async def predict(input: InputText):
     try:
